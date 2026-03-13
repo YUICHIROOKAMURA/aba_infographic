@@ -1,0 +1,2247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>応用行動分析（ABA）スタッフ教育資料</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --navy-light: #1a2d42;
+    --teal: #0e8a7a;
+    --teal-light: #1aab98;
+    --teal-pale: #e6f5f3;
+    --amber: #d97706;
+    --amber-light: #fef3c7;
+    --rose: #be3a5a;
+    --rose-light: #fde8ee;
+    --blue: #2563eb;
+    --blue-light: #eff6ff;
+    --slate: #64748b;
+    --slate-light: #f1f5f9;
+    --white: #ffffff;
+    --text-main: #1e293b;
+    --text-sub: #475569;
+    --border: #e2e8f0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #f8fafc;
+    color: var(--text-main);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* ===================== HERO ===================== */
+  .hero {
+    background: var(--navy);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 70% 50% at 20% 80%, rgba(14,138,122,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 20%, rgba(37,99,235,0.15) 0%, transparent 60%);
+  }
+
+  .hero-badge {
+    background: rgba(14,138,122,0.2);
+    border: 1px solid rgba(14,138,122,0.5);
+    color: #5eead4;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(32px, 5vw, 60px);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .hero h1 span {
+    color: #5eead4;
+  }
+
+  .hero-sub {
+    font-size: clamp(13px, 1.5vw, 17px);
+    color: #94a3b8;
+    max-width: 560px;
+    margin-bottom: 48px;
+    position: relative;
+    line-height: 1.8;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+
+  .hero-stat .num {
+    font-family: 'DM Mono', monospace;
+    font-size: 36px;
+    color: #5eead4;
+    font-weight: 500;
+    display: block;
+  }
+
+  .hero-stat .label {
+    font-size: 12px;
+    color: #94a3b8;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #64748b;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  .scroll-hint svg { color: #475569; }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ===================== SECTION BASE ===================== */
+  .section {
+    padding: 80px 24px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .section-full {
+    padding: 80px 24px;
+    width: 100%;
+  }
+
+  .section-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: var(--teal);
+    display: block;
+  }
+
+  h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(22px, 3vw, 34px);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    color: var(--navy);
+  }
+
+  .lead {
+    font-size: 16px;
+    color: var(--text-sub);
+    line-height: 1.9;
+    margin-bottom: 48px;
+  }
+
+  /* ===================== DIVIDER ===================== */
+  .divider {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 0;
+  }
+
+  /* ===================== PROBLEM SECTION ===================== */
+  .problem-bg {
+    background: linear-gradient(135deg, #fff7ed 0%, #fef2f2 100%);
+    border-top: 4px solid var(--amber);
+  }
+
+  .problem-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .problem-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    border-left: 4px solid var(--rose);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  .problem-card .icon-wrap {
+    width: 44px;
+    height: 44px;
+    background: var(--rose-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .problem-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--navy);
+  }
+
+  .problem-card p {
+    font-size: 13px;
+    color: var(--text-sub);
+    line-height: 1.7;
+  }
+
+  /* ===================== DEFINITION ===================== */
+  .def-box {
+    background: var(--navy);
+    border-radius: 20px;
+    padding: 40px;
+    color: white;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .def-box::after {
+    content: '"';
+    position: absolute;
+    right: 24px;
+    top: -20px;
+    font-size: 160px;
+    color: rgba(255,255,255,0.05);
+    font-family: serif;
+    line-height: 1;
+  }
+
+  .def-box p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #e2e8f0;
+    position: relative;
+  }
+
+  .def-box p strong {
+    color: #5eead4;
+  }
+
+  .seven-dims {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .dim-card {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    border-top: 3px solid var(--teal);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .dim-card .eng {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--teal);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .dim-card h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--navy);
+  }
+
+  .dim-card p {
+    font-size: 12px;
+    color: var(--text-sub);
+    line-height: 1.6;
+  }
+
+  /* ===================== ABC SECTION ===================== */
+  .abc-bg {
+    background: var(--navy);
+    color: white;
+  }
+
+  .abc-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin: 40px 0;
+    flex-wrap: wrap;
+  }
+
+  .abc-card {
+    flex: 1;
+    min-width: 200px;
+    padding: 32px 28px;
+    border-radius: 0;
+    position: relative;
+  }
+
+  .abc-card:first-child { border-radius: 16px 0 0 16px; }
+  .abc-card:last-child { border-radius: 0 16px 16px 0; }
+
+  .abc-A { background: rgba(37,99,235,0.25); border-top: 3px solid #60a5fa; }
+  .abc-B { background: rgba(14,138,122,0.25); border-top: 3px solid #5eead4; }
+  .abc-C { background: rgba(217,119,6,0.25); border-top: 3px solid #fbbf24; }
+
+  .abc-letter {
+    font-family: 'DM Mono', monospace;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 8px;
+    opacity: 0.4;
+  }
+
+  .abc-A .abc-letter { color: #93c5fd; }
+  .abc-B .abc-letter { color: #99f6e4; }
+  .abc-C .abc-letter { color: #fcd34d; }
+
+  .abc-jp { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .abc-en { font-size: 11px; color: #94a3b8; margin-bottom: 16px; font-family: 'DM Mono', monospace; }
+  .abc-desc { font-size: 13px; color: #cbd5e1; line-height: 1.6; }
+
+  .abc-arrow {
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    color: #475569;
+  }
+
+  .abc-examples {
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 32px;
+    margin-top: 8px;
+  }
+
+  .abc-examples h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 20px;
+  }
+
+  .abc-example-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .abc-example-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .ex-cell {
+    background: rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 13px;
+    color: #e2e8f0;
+    line-height: 1.5;
+  }
+
+  .ex-arrow { color: #475569; font-size: 18px; text-align: center; }
+
+  .context-label {
+    font-size: 10px;
+    color: #64748b;
+    margin-bottom: 4px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  /* ===================== REINFORCEMENT ===================== */
+  .reinforce-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .reinforce-card {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .reinforce-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }
+
+  .rc-increase::before { background: linear-gradient(90deg, #10b981, #059669); }
+  .rc-decrease::before { background: linear-gradient(90deg, #ef4444, #dc2626); }
+  .rc-increase-neg::before { background: linear-gradient(90deg, #3b82f6, #2563eb); }
+  .rc-decrease-neg::before { background: linear-gradient(90deg, #f59e0b, #d97706); }
+
+  .rc-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .rc-icon-wrap {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .rc-increase .rc-icon-wrap { background: #d1fae5; }
+  .rc-decrease .rc-icon-wrap { background: #fee2e2; }
+  .rc-increase-neg .rc-icon-wrap { background: #dbeafe; }
+  .rc-decrease-neg .rc-icon-wrap { background: #fef3c7; }
+
+  .rc-title { font-size: 15px; font-weight: 700; color: var(--navy); }
+  .rc-type { font-size: 11px; color: var(--text-sub); font-family: 'DM Mono', monospace; }
+
+  .rc-formula {
+    background: var(--slate-light);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--text-sub);
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  .rc-example {
+    font-size: 13px;
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: white;
+    border: 1px solid var(--border);
+  }
+
+  .rc-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 100px;
+    margin-bottom: 6px;
+  }
+
+  .tag-green { background: #d1fae5; color: #065f46; }
+  .tag-red { background: #fee2e2; color: #991b1b; }
+  .tag-blue { background: #dbeafe; color: #1e40af; }
+  .tag-amber { background: #fef3c7; color: #92400e; }
+
+  .reinforce-note {
+    background: #fff8f0;
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 24px;
+    margin-top: 32px;
+    font-size: 14px;
+    color: var(--text-sub);
+    line-height: 1.7;
+  }
+
+  /* ===================== FUNCTION SECTION ===================== */
+  .function-bg {
+    background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+  }
+
+  .function-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  .func-card {
+    background: white;
+    border-radius: 18px;
+    padding: 28px 22px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+
+  .func-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+  }
+
+  .func-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+  }
+
+  .fi-attention { background: linear-gradient(135deg, #fee2e2, #fecaca); }
+  .fi-escape { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+  .fi-tangible { background: linear-gradient(135deg, #d1fae5, #a7f3d0); }
+  .fi-auto { background: linear-gradient(135deg, #f3e8ff, #e9d5ff); }
+
+  .func-letter {
+    font-family: 'DM Mono', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .func-name { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .func-en { font-size: 10px; color: var(--text-sub); font-family: 'DM Mono', monospace; margin-bottom: 12px; }
+  .func-desc { font-size: 12px; color: var(--text-sub); line-height: 1.6; }
+
+  .seat-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin: 32px 0;
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 28px;
+  }
+
+  .seat-letter-block {
+    padding: 16px 20px;
+    text-align: center;
+    flex: 1;
+  }
+
+  .sl-char {
+    font-family: 'DM Mono', monospace;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+    display: block;
+  }
+
+  .sl-word {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 4px;
+  }
+
+  /* ===================== FBA SECTION ===================== */
+  .fba-steps {
+    position: relative;
+    margin-top: 40px;
+  }
+
+  .fba-step {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  .fba-step:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 52px;
+    bottom: -32px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--teal), transparent);
+  }
+
+  .step-num {
+    width: 48px;
+    height: 48px;
+    background: var(--teal);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-weight: 700;
+    color: white;
+    font-size: 16px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fba-step-content {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    flex: 1;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .fba-step-content h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .fba-step-content p {
+    font-size: 14px;
+    color: var(--text-sub);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .fba-method-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .method-tag {
+    background: var(--teal-pale);
+    color: var(--teal);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 100px;
+    border: 1px solid rgba(14,138,122,0.2);
+  }
+
+  /* ===================== ABC DATA TABLE ===================== */
+  .data-table-wrap {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    margin-top: 24px;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .data-table th {
+    background: var(--navy);
+    color: white;
+    padding: 14px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-align: left;
+  }
+
+  .data-table td {
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:nth-child(even) td { background: #f8fafc; }
+
+  .data-table td:first-child { color: var(--text-sub); font-size: 12px; }
+
+  /* ===================== TECHNIQUES ===================== */
+  .techniques-bg {
+    background: var(--navy);
+    color: white;
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .tech-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 28px 24px;
+    transition: background 0.2s;
+    cursor: default;
+  }
+
+  .tech-card:hover {
+    background: rgba(255,255,255,0.11);
+  }
+
+  .tech-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .tech-icon-wrap {
+    width: 40px;
+    height: 40px;
+    background: rgba(94,234,212,0.15);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .tech-title { font-size: 15px; font-weight: 700; color: #e2e8f0; margin-bottom: 2px; }
+  .tech-subtitle { font-size: 11px; color: #64748b; font-family: 'DM Mono', monospace; }
+  .tech-desc { font-size: 13px; color: #94a3b8; line-height: 1.7; }
+
+  .tech-detail {
+    margin-top: 12px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 12px;
+    color: #cbd5e1;
+    line-height: 1.6;
+    border-left: 3px solid rgba(94,234,212,0.4);
+  }
+
+  /* ===================== SCHEDULES ===================== */
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .sched-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .sched-abbr {
+    font-family: 'DM Mono', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    color: #5eead4;
+    margin-bottom: 6px;
+  }
+
+  .sched-name { font-size: 13px; font-weight: 700; color: #e2e8f0; margin-bottom: 8px; }
+
+  .sched-bar-wrap { height: 6px; background: rgba(255,255,255,0.1); border-radius: 100px; margin-bottom: 8px; }
+  .sched-bar { height: 100%; border-radius: 100px; background: linear-gradient(90deg, #5eead4, #3b82f6); }
+
+  .sched-desc { font-size: 11px; color: #64748b; line-height: 1.5; }
+
+  /* ===================== EMPLOYMENT SECTION ===================== */
+  .employ-scenario {
+    background: white;
+    border-radius: 18px;
+    padding: 32px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    margin-bottom: 24px;
+  }
+
+  .employ-scenario h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .employ-scenario .scenario-tag {
+    font-size: 10px;
+    background: var(--teal-pale);
+    color: var(--teal);
+    border: 1px solid rgba(14,138,122,0.2);
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 100px;
+  }
+
+  .employ-scenario p {
+    font-size: 14px;
+    color: var(--text-sub);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .mini-abc {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .mini-abc-cell {
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .mac-a { background: #eff6ff; border-top: 3px solid #60a5fa; color: #1e40af; }
+  .mac-b { background: #f0fdf4; border-top: 3px solid #34d399; color: #065f46; }
+  .mac-c { background: #fff7ed; border-top: 3px solid #fb923c; color: #9a3412; }
+
+  .mini-abc-cell .mac-label { font-weight: 700; font-size: 11px; margin-bottom: 4px; }
+
+  /* ===================== TASK ANALYSIS ===================== */
+  .task-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 24px 0;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .task-step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+    cursor: default;
+  }
+
+  .task-step:last-child { border-bottom: none; }
+
+  .task-step:hover { background: #f8fafc; }
+
+  .task-num {
+    width: 32px;
+    height: 32px;
+    background: var(--teal-pale);
+    color: var(--teal);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    flex-shrink: 0;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .task-text { font-size: 14px; color: var(--text-main); flex: 1; }
+  .task-prompt { font-size: 11px; color: var(--text-sub); background: var(--slate-light); padding: 2px 8px; border-radius: 100px; }
+
+  /* ===================== CRITIQUE SECTION ===================== */
+  .critique-bg {
+    background: linear-gradient(135deg, #fff1f2 0%, #fff8ed 100%);
+    border-top: 4px solid var(--rose);
+  }
+
+  .critique-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  .crit-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    border-left: 4px solid;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .crit-card.crit-severe { border-color: var(--rose); }
+  .crit-card.crit-medium { border-color: var(--amber); }
+  .crit-card.crit-mild { border-color: #3b82f6; }
+
+  .crit-card h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .crit-card p { font-size: 13px; color: var(--text-sub); line-height: 1.6; }
+
+  .balance-box {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    border: 1px solid #c7d2fe;
+    border-top: 4px solid var(--blue);
+    margin-top: 32px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .balance-box h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+  .balance-box p { font-size: 14px; color: var(--text-sub); line-height: 1.7; }
+
+  /* ===================== GLOSSARY ===================== */
+  .glossary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .gloss-item {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+
+  .gloss-term { font-weight: 700; font-size: 14px; color: var(--teal); margin-bottom: 4px; }
+  .gloss-en { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-sub); margin-bottom: 8px; }
+  .gloss-def { font-size: 13px; color: var(--text-sub); line-height: 1.5; }
+
+  /* ===================== SOURCES ===================== */
+  .sources-bg {
+    background: var(--navy);
+    color: white;
+  }
+
+  .sources-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .source-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: background 0.2s;
+  }
+
+  .source-item:hover { background: rgba(255,255,255,0.09); }
+
+  .source-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: #5eead4;
+    font-weight: 700;
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  .source-content { flex: 1; }
+
+  .source-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 4px;
+  }
+
+  .source-meta {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+
+  .source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: #5eead4;
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .source-link:hover { text-decoration: underline; }
+
+  /* ===================== FOOTER ===================== */
+  .footer {
+    background: #060f1a;
+    color: #475569;
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .footer strong { color: #64748b; }
+
+  /* ===================== FADE IN ANIMATION ===================== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===================== PROGRESS BAR ===================== */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #5eead4, #3b82f6);
+    z-index: 1000;
+    transition: width 0.1s;
+    width: 0%;
+  }
+
+  /* ===================== TOC ===================== */
+  .toc {
+    position: fixed;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 100;
+  }
+
+  .toc-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    position: relative;
+  }
+
+  .toc-dot.active { background: var(--teal); transform: scale(1.4); }
+  .toc-dot:hover { background: var(--teal-light); }
+
+  .toc-dot::before {
+    content: attr(data-label);
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--navy);
+    color: white;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+
+  .toc-dot:hover::before { opacity: 1; }
+
+  @media (max-width: 680px) {
+    .reinforce-grid { grid-template-columns: 1fr; }
+    .abc-flow { flex-direction: column; }
+    .abc-card:first-child, .abc-card:last-child { border-radius: 16px; }
+    .abc-card { border-radius: 16px; }
+    .toc { display: none; }
+    .abc-example-row { grid-template-columns: 1fr; }
+    .ex-arrow { display: none; }
+    .mini-abc { grid-template-columns: 1fr; }
+  }
+
+  /* Horizontal rule between sections */
+  .section-sep {
+    height: 1px;
+    background: var(--border);
+    margin: 0;
+  }
+
+  /* Inline callout */
+  .callout {
+    display: flex;
+    gap: 16px;
+    background: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 14px;
+    color: #1e40af;
+    line-height: 1.6;
+    align-items: flex-start;
+  }
+
+  .callout svg { flex-shrink: 0; margin-top: 2px; }
+
+  .warn-callout {
+    background: #fff7ed;
+    border-left-color: var(--amber);
+    color: #92400e;
+  }
+
+  /* Inline highlight */
+  mark {
+    background: #fef08a;
+    padding: 0 3px;
+    border-radius: 3px;
+    color: var(--text-main);
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- TOC -->
+<nav class="toc" id="tocNav">
+  <div class="toc-dot active" data-label="はじめに" data-target="hero" onclick="scrollTo('hero')"></div>
+  <div class="toc-dot" data-label="現場の問題" data-target="problem" onclick="scrollTo('problem')"></div>
+  <div class="toc-dot" data-label="ABAとは" data-target="definition" onclick="scrollTo('definition')"></div>
+  <div class="toc-dot" data-label="三項随伴性" data-target="abc" onclick="scrollTo('abc')"></div>
+  <div class="toc-dot" data-label="強化の仕組み" data-target="reinforcement" onclick="scrollTo('reinforcement')"></div>
+  <div class="toc-dot" data-label="行動の機能" data-target="function" onclick="scrollTo('function')"></div>
+  <div class="toc-dot" data-label="機能的行動評価" data-target="fba" onclick="scrollTo('fba')"></div>
+  <div class="toc-dot" data-label="支援技術" data-target="techniques" onclick="scrollTo('techniques')"></div>
+  <div class="toc-dot" data-label="就労支援での活用" data-target="employment" onclick="scrollTo('employment')"></div>
+  <div class="toc-dot" data-label="批判的視点" data-target="critique" onclick="scrollTo('critique')"></div>
+  <div class="toc-dot" data-label="用語集" data-target="glossary" onclick="scrollTo('glossary')"></div>
+  <div class="toc-dot" data-label="出典" data-target="sources" onclick="scrollTo('sources')"></div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="hero">
+  <div class="hero-badge">Staff Education Material</div>
+  <h1>
+    応用行動分析<br>
+    <span>Applied Behavior Analysis</span>
+  </h1>
+  <p class="hero-sub">
+    「なぜこの行動が起きるのか」を科学的に理解し、<br>
+    環境を整えることで行動を変える支援の枠組み
+  </p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="num">1968</span>
+      <span class="label">科学的確立年</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">7</span>
+      <span class="label">次元（次元性）</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">4</span>
+      <span class="label">行動の機能</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">ABC</span>
+      <span class="label">三項随伴性</span>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    SCROLL
+  </div>
+</section>
+
+<!-- ===================== PROBLEM ===================== -->
+<section class="section-full problem-bg" id="problem">
+  <div class="section-inner section fade-in">
+    <div class="section-label">Section 01</div>
+    <h2>現場で「困った行動」に直面したとき、何が起きているのか？</h2>
+    <p class="lead">
+      支援現場では、利用者の特定の行動に戸惑うことがあります。しかし多くの場合、「困った行動」はランダムに起きているのではなく、<mark>その人にとって合理的な理由のある、環境への適応的な反応</mark>です。ABAはそのロジックを読み解く道具です。
+    </p>
+
+    <div class="problem-cards">
+      <div class="problem-card fade-in">
+        <div class="icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="#be3a5a" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 8v4m0 4h.01"/></svg>
+        </div>
+        <h3>なぜ繰り返すのか分からない</h3>
+        <p>何度注意しても同じ行動が繰り返される。叱っても効果がない。その背景にある仕組みが見えていない状態。</p>
+      </div>
+      <div class="problem-card fade-in">
+        <div class="icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="#be3a5a" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3>支援者によって結果が違う</h3>
+        <p>Aさんが対応するとうまくいくが、Bさんだとうまくいかない。支援の一貫性が保てていない。</p>
+      </div>
+      <div class="problem-card fade-in">
+        <div class="icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="#be3a5a" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3>改善したいが方法が分からない</h3>
+        <p>「こうなってほしい」というゴールはあるが、どう関わればよいか体系的な手がかりがない。</p>
+      </div>
+      <div class="problem-card fade-in">
+        <div class="icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="#be3a5a" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <h3>変化を客観的に評価できない</h3>
+        <p>支援がうまくいっているかを「なんとなく」で判断している。根拠のある評価の仕組みがない。</p>
+      </div>
+    </div>
+
+    <div class="callout fade-in" style="margin-top: 40px;">
+      <svg width="20" height="20" fill="none" stroke="#3b82f6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <div>
+        ABAは<strong>行動を問題視するのではなく、行動が生じる「文脈（環境）」を分析する</strong>ことを重視します。「この人は問題がある」ではなく、「この環境の組み合わせで、この行動が起きている」という視点が出発点です。
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ===================== DEFINITION ===================== -->
+<section class="section" id="definition">
+  <div class="section-label">Section 02</div>
+  <h2>応用行動分析（ABA）とは何か</h2>
+  <p class="lead">
+    ABAは1960年代にアメリカの行動心理学者B.F.スキナーの研究を基盤として体系化されました。1968年、Baer・Wolf・Risleyの論文が「科学としてのABA」の7原則を定義し、今日の実践基盤となっています。
+  </p>
+
+  <div class="def-box fade-in">
+    <p>
+      応用行動分析とは、<strong>行動の科学的な原理</strong>を用いて、<strong>社会的に意義のある行動の変容</strong>を引き起こし、その変容がなぜ生じたかを<strong>実証的に示す</strong>アプローチである。
+      <br><br>
+      <small style="color: #94a3b8; font-size: 13px;">— Baer, Wolf & Risley (1968). "Some current dimensions of applied behavior analysis." Journal of Applied Behavior Analysis, 1(1), 91–97.</small>
+    </p>
+  </div>
+
+  <h3 style="font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px; font-family: 'Noto Serif JP', serif;">
+    ABAを「科学」たらしめる7つの次元
+  </h3>
+  <p style="color: var(--text-sub); font-size: 14px; margin-bottom: 24px;">Baer et al. (1968) が定義した、ABAを他の介入から区別する7原則</p>
+
+  <div class="seven-dims">
+    <div class="dim-card fade-in">
+      <div class="eng">01 / Applied</div>
+      <h4>応用的</h4>
+      <p>日常生活・社会参加に直結する、実際に意味のある行動を対象とする</p>
+    </div>
+    <div class="dim-card fade-in">
+      <div class="eng">02 / Behavioral</div>
+      <h4>行動的</h4>
+      <p>観察・測定できる行動そのものを扱う。「やる気がない」ではなく「〇〇できた回数」を見る</p>
+    </div>
+    <div class="dim-card fade-in">
+      <div class="eng">03 / Analytic</div>
+      <h4>分析的</h4>
+      <p>介入が行動変化の原因であることをデータで示す。根拠のない「きっとこうだろう」は使わない</p>
+    </div>
+    <div class="dim-card fade-in">
+      <div class="eng">04 / Technological</div>
+      <h4>技術的</h4>
+      <p>手順を誰でも再現できるように明確・具体的に記述する</p>
+    </div>
+    <div class="dim-card fade-in">
+      <div class="eng">05 / Conceptually Systematic</div>
+      <h4>概念的体系性</h4>
+      <p>行動分析学の既存の原理や概念と一貫性を保って介入を組み立てる</p>
+    </div>
+    <div class="dim-card fade-in">
+      <div class="eng">06 / Effective</div>
+      <h4>効果的</h4>
+      <p>実際に社会的・実際的に意味のある変化をもたらすことを求める。統計的有意差だけでは不十分</p>
+    </div>
+    <div class="dim-card fade-in">
+      <div class="eng">07 / Generality</div>
+      <h4>般化</h4>
+      <p>訓練された場面以外（他の場所・他の人・将来）にも変化が広がることを目指す</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ===================== ABC ===================== -->
+<section class="section-full abc-bg" id="abc">
+  <div class="section-inner section fade-in">
+    <div class="section-label" style="color: #5eead4;">Section 03</div>
+    <h2 style="color: white;">ABAの心臓部：三項随伴性（ABC）</h2>
+    <p class="lead" style="color: #94a3b8;">
+      すべての行動は「前後の文脈」の中で起きています。ABAはこの文脈を3つの要素に分解して分析します。この「ABCフレーム」がすべての支援の出発点です。
+    </p>
+
+    <div class="abc-flow fade-in">
+      <div class="abc-card abc-A">
+        <div class="abc-letter">A</div>
+        <div class="abc-jp">先行刺激</div>
+        <div class="abc-en">Antecedent</div>
+        <div class="abc-desc">行動が起きる<strong style="color: #93c5fd;">直前</strong>の状況・出来事・刺激。行動を「引き起こす」きっかけとなる環境的要素。</div>
+      </div>
+      <div class="abc-arrow">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </div>
+      <div class="abc-card abc-B">
+        <div class="abc-letter">B</div>
+        <div class="abc-jp">行動</div>
+        <div class="abc-en">Behavior</div>
+        <div class="abc-desc">観察・測定できる<strong style="color: #99f6e4;">具体的な行為</strong>。「態度が悪い」ではなく「〇〇をした」という形で定義する。</div>
+      </div>
+      <div class="abc-arrow">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </div>
+      <div class="abc-card abc-C">
+        <div class="abc-letter">C</div>
+        <div class="abc-jp">後続刺激（結果）</div>
+        <div class="abc-en">Consequence</div>
+        <div class="abc-desc">行動の<strong style="color: #fcd34d;">直後</strong>に起きること。この結果が「次に同じ行動をするかどうか」を決定する。</div>
+      </div>
+    </div>
+
+    <div class="callout fade-in" style="background: rgba(59,130,246,0.15); border-left-color: #60a5fa; color: #93c5fd;">
+      <svg width="20" height="20" fill="none" stroke="#60a5fa" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+      <div>重要：<strong>結果（C）が行動（B）の将来の頻度を決める</strong>という点がABAの核心です。「なぜこの行動が維持されているか」は必ず「結果」の中にあります。</div>
+    </div>
+
+    <div class="abc-examples fade-in">
+      <h3>就労支援現場でのABC記録 —  具体例</h3>
+
+      <div class="abc-example-row">
+        <div class="ex-cell">
+          <div class="context-label" style="color: #93c5fd;">A（先行）</div>
+          「この書類を整理してください」という指示を受けた
+        </div>
+        <div class="ex-arrow">→</div>
+        <div class="ex-cell">
+          <div class="context-label" style="color: #99f6e4;">B（行動）</div>
+          その場でトイレに立ち、10分戻らなかった
+        </div>
+        <div class="ex-arrow">→</div>
+        <div class="ex-cell">
+          <div class="context-label" style="color: #fcd34d;">C（結果）</div>
+          戻ったとき、担当者が別の作業を担当していた（書類整理を免れた）
+        </div>
+      </div>
+
+      <div class="abc-example-row">
+        <div class="ex-cell">
+          <div class="context-label" style="color: #93c5fd;">A（先行）</div>
+          大人数のミーティングの場に出席を求められた
+        </div>
+        <div class="ex-arrow">→</div>
+        <div class="ex-cell">
+          <div class="context-label" style="color: #99f6e4;">B（行動）</div>
+          頭痛を訴えて別室で休むよう申し出た
+        </div>
+        <div class="ex-arrow">→</div>
+        <div class="ex-cell">
+          <div class="context-label" style="color: #fcd34d;">C（結果）</div>
+          ミーティングに出なくてよくなり、静かな部屋でゆっくりできた
+        </div>
+      </div>
+
+      <div class="abc-example-row">
+        <div class="ex-cell">
+          <div class="context-label" style="color: #93c5fd;">A（先行）</div>
+          担当者が別の利用者と話している（注目がない）
+        </div>
+        <div class="ex-arrow">→</div>
+        <div class="ex-cell">
+          <div class="context-label" style="color: #99f6e4;">B（行動）</div>
+          急に大きな声で自分の不満を話し始めた
+        </div>
+        <div class="ex-arrow">→</div>
+        <div class="ex-cell">
+          <div class="context-label" style="color: #fcd34d;">C（結果）</div>
+          担当者が「どうしたの？」と駆け寄って話を聞いてくれた
+        </div>
+      </div>
+    </div>
+
+    <div class="warn-callout callout fade-in">
+      <svg width="20" height="20" fill="none" stroke="#d97706" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+      <div>
+        <strong>注意：</strong>「B（行動）」の定義は具体的でなければなりません。「態度が悪い」「やる気がない」は測定不可能で、ABCの分析に使えません。「〇時〇分に、机を叩く行為が3回あった」のように記述します。
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ===================== REINFORCEMENT ===================== -->
+<section class="section" id="reinforcement">
+  <div class="section-label">Section 04</div>
+  <h2>行動を増やし・減らす仕組み：強化と弱化</h2>
+  <p class="lead">
+    ABAでは「結果（C）が行動の未来を決める」と考えます。その結果の種類によって、行動は増えたり減ったりします。<mark>「強化（reinforcement）」は行動を増やす結果</mark>、「弱化（punishment）」は行動を減らす結果です。注意深く区別してください。
+  </p>
+
+  <div class="reinforce-grid">
+    <div class="reinforce-card rc-increase fade-in">
+      <div class="rc-header">
+        <div class="rc-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="#10b981" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+        </div>
+        <div>
+          <div class="rc-title">正の強化</div>
+          <div class="rc-type">Positive Reinforcement</div>
+        </div>
+      </div>
+      <div class="rc-formula">
+        行動 → <strong>好きなものが加わる</strong> → 行動が増える
+      </div>
+      <div class="rc-example">
+        <span class="rc-tag tag-green">就労支援の例</span><br>
+        報告を正確にした → 担当者に「よくできました」と言われた → 報告が増える
+      </div>
+    </div>
+
+    <div class="reinforce-card rc-increase-neg fade-in">
+      <div class="rc-header">
+        <div class="rc-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="#3b82f6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/></svg>
+        </div>
+        <div>
+          <div class="rc-title">負の強化</div>
+          <div class="rc-type">Negative Reinforcement</div>
+        </div>
+      </div>
+      <div class="rc-formula">
+        行動 → <strong>嫌なものが取り除かれる</strong> → 行動が増える
+      </div>
+      <div class="rc-example">
+        <span class="rc-tag tag-blue">就労支援の例</span><br>
+        「疲れた」と伝えた → 休憩が取れた（不快感が消えた）→ 「疲れた」と言うことが増える
+      </div>
+    </div>
+
+    <div class="reinforce-card rc-decrease fade-in">
+      <div class="rc-header">
+        <div class="rc-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="#ef4444" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg>
+        </div>
+        <div>
+          <div class="rc-title">正の弱化</div>
+          <div class="rc-type">Positive Punishment</div>
+        </div>
+      </div>
+      <div class="rc-formula">
+        行動 → <strong>嫌なものが加わる</strong> → 行動が減る
+      </div>
+      <div class="rc-example">
+        <span class="rc-tag tag-red">就労支援の例</span><br>
+        遅刻した → 厳しく叱責された → 遅刻が減る（理論上）<br>
+        <small style="color: #ef4444; font-size: 11px; margin-top: 4px; display: block;">※ 後述の批判的視点を参照</small>
+      </div>
+    </div>
+
+    <div class="reinforce-card rc-decrease-neg fade-in">
+      <div class="rc-header">
+        <div class="rc-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="#f59e0b" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div>
+          <div class="rc-title">負の弱化</div>
+          <div class="rc-type">Negative Punishment</div>
+        </div>
+      </div>
+      <div class="rc-formula">
+        行動 → <strong>好きなものが取り除かれる</strong> → 行動が減る
+      </div>
+      <div class="rc-example">
+        <span class="rc-tag tag-amber">就労支援の例</span><br>
+        無断でスマホを使用した → 昼休憩の自由時間が短くなった → スマホ使用が減る（理論上）
+      </div>
+    </div>
+  </div>
+
+  <div class="reinforce-note fade-in">
+    <strong>「強化」＝「ほめること」ではありません。</strong><br>
+    重要なのは「その結果が行動を増やしたか」です。たとえ叱責であっても、叱責によって注目が得られ、行動が増えていれば、それは「強化」になっています。「好き嫌い」ではなく「行動への効果」で判断します。
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ===================== FUNCTION ===================== -->
+<section class="section-full function-bg" id="function">
+  <div class="section-inner section fade-in">
+    <div class="section-label">Section 05</div>
+    <h2>「困った行動」には必ず目的がある：行動の4機能</h2>
+    <p class="lead">
+      ABAでは、すべての行動には<strong>その人なりの「機能（目的）」</strong>があると考えます。同じ行動でも異なる機能を持つ場合があり、機能が違えば有効な支援も異なります。<mark>行動の表面だけを見て対応すると的外れになります</mark>。
+    </p>
+
+    <div class="seat-visual fade-in">
+      <div class="seat-letter-block">
+        <span class="sl-char" style="color: #f87171;">S</span>
+        <div class="sl-word">Sensory</div>
+      </div>
+      <div class="seat-letter-block">
+        <span class="sl-char" style="color: #60a5fa;">E</span>
+        <div class="sl-word">Escape</div>
+      </div>
+      <div class="seat-letter-block">
+        <span class="sl-char" style="color: #34d399;">A</span>
+        <div class="sl-word">Attention</div>
+      </div>
+      <div class="seat-letter-block">
+        <span class="sl-char" style="color: #fbbf24;">T</span>
+        <div class="sl-word">Tangible</div>
+      </div>
+    </div>
+
+    <div class="function-grid">
+      <div class="func-card fade-in">
+        <div class="func-icon fi-attention">
+          <svg width="28" height="28" fill="none" stroke="#dc2626" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+        </div>
+        <div class="func-letter" style="color: #dc2626;">A</div>
+        <div class="func-name">注目獲得</div>
+        <div class="func-en">Attention</div>
+        <div class="func-desc">他者の注意・関心・反応を得るための行動。叱責でもポジティブな注目でも、注目が得られれば機能する。</div>
+      </div>
+
+      <div class="func-card fade-in">
+        <div class="func-icon fi-escape">
+          <svg width="28" height="28" fill="none" stroke="#2563eb" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+        </div>
+        <div class="func-letter" style="color: #2563eb;">E</div>
+        <div class="func-name">回避・逃避</div>
+        <div class="func-en">Escape / Avoidance</div>
+        <div class="func-desc">不快な課題・状況・人から逃れるための行動。最も多くの「問題行動」に関わる機能。</div>
+      </div>
+
+      <div class="func-card fade-in">
+        <div class="func-icon fi-tangible">
+          <svg width="28" height="28" fill="none" stroke="#059669" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="func-letter" style="color: #059669;">T</div>
+        <div class="func-name">物・活動の獲得</div>
+        <div class="func-en">Tangible</div>
+        <div class="func-desc">特定のもの（食べ物・物品・好きな活動）を手に入れるための行動。欲求の「代替表現」のことがある。</div>
+      </div>
+
+      <div class="func-card fade-in">
+        <div class="func-icon fi-auto">
+          <svg width="28" height="28" fill="none" stroke="#7c3aed" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 1v4m0 14v4M4.22 4.22l2.83 2.83m9.9 9.9l2.83 2.83M1 12h4m14 0h4M4.22 19.78l2.83-2.83m9.9-9.9l2.83-2.83"/></svg>
+        </div>
+        <div class="func-letter" style="color: #7c3aed;">S</div>
+        <div class="func-name">感覚刺激（自動強化）</div>
+        <div class="func-en">Sensory / Automatic</div>
+        <div class="func-desc">他者に関係なく、行動そのものが感覚的に心地よい・刺激になっている。常同行動や自己刺激行動など。</div>
+      </div>
+    </div>
+
+    <div class="callout fade-in" style="margin-top: 40px;">
+      <svg width="20" height="20" fill="none" stroke="#3b82f6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <div>
+        <strong>同じ行動でも機能が異なる：</strong> たとえば「大声を出す」という行動が、ある利用者では「注目獲得」、別の利用者では「課題から逃れるため」、また別の利用者では「感覚的快感のため」ということがあります。<strong>機能を正しく特定しないと、介入は的外れになります。</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ===================== FBA ===================== -->
+<section class="section" id="fba">
+  <div class="section-label">Section 06</div>
+  <h2>機能的行動アセスメント（FBA）：「なぜ？」を体系的に調べる</h2>
+  <p class="lead">
+    行動の機能を正確に知るための体系的プロセスが「機能的行動アセスメント（Functional Behavior Assessment）」です。FBAは感覚や思い込みではなく、<mark>データと観察に基づく仮説立案のプロセス</mark>です。
+  </p>
+
+  <div class="fba-steps">
+    <div class="fba-step fade-in">
+      <div class="step-num">1</div>
+      <div class="fba-step-content">
+        <h3>行動の操作的定義（Observable Definition）</h3>
+        <p>「問題行動」を観察・測定できる言葉に定義します。「暴力的」→「拳で机を叩く行為」のように具体化。誰が見ても同じように記録できる状態にします。</p>
+        <div class="fba-method-tags">
+          <span class="method-tag">頻度</span>
+          <span class="method-tag">持続時間</span>
+          <span class="method-tag">強度</span>
+          <span class="method-tag">潜時（どれくらい経ってから）</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="fba-step fade-in">
+      <div class="step-num">2</div>
+      <div class="fba-step-content">
+        <h3>情報収集：間接アセスメント</h3>
+        <p>本人・家族・支援者へのインタビュー、行動評価尺度の記入など、直接観察以外の方法で情報を集めます。本人の視点を含めることが倫理的に重要です。</p>
+        <div class="fba-method-tags">
+          <span class="method-tag">構造化インタビュー</span>
+          <span class="method-tag">行動評定票（MAS等）</span>
+          <span class="method-tag">本人へのヒアリング</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="fba-step fade-in">
+      <div class="step-num">3</div>
+      <div class="fba-step-content">
+        <h3>直接観察：ABCデータの収集</h3>
+        <p>実際の場面でABC記録をとります。どんな状況で行動が起きるか、逆に起きないかのパターンを把握します。</p>
+
+        <div class="data-table-wrap" style="margin-top: 16px;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>日時</th>
+                <th>A（先行刺激）</th>
+                <th>B（行動）</th>
+                <th>C（後続刺激）</th>
+                <th>推測される機能</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>10:15</td>
+                <td>書類入力の指示</td>
+                <td>「やりたくない」と言い離席</td>
+                <td>担当者が付き添って別作業に変更</td>
+                <td>逃避</td>
+              </tr>
+              <tr>
+                <td>11:30</td>
+                <td>担当者が別室に移動</td>
+                <td>隣の利用者に話しかけ続ける</td>
+                <td>担当者が戻ってきて声をかけた</td>
+                <td>注目獲得</td>
+              </tr>
+              <tr>
+                <td>14:00</td>
+                <td>一人で作業中（刺激少）</td>
+                <td>手を繰り返し机に叩きつける</td>
+                <td>叩く行為自体を継続（自己完結）</td>
+                <td>感覚刺激</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="fba-step fade-in">
+      <div class="step-num">4</div>
+      <div class="fba-step-content">
+        <h3>機能仮説の立案</h3>
+        <p>収集したデータをもとに「この行動は〇〇機能によって維持されている」という仮説を立てます。仮説はあくまで仮説であり、検証が必要です。</p>
+        <div class="callout" style="margin: 12px 0 0;">
+          <svg width="18" height="18" fill="none" stroke="#3b82f6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <div style="font-size: 13px;">仮説の形式：「〔状況〕のとき、〔行動〕が起きると、〔結果〕が生じ、行動が維持されている」</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fba-step fade-in">
+      <div class="step-num">5</div>
+      <div class="fba-step-content">
+        <h3>行動支援計画（BSP）の策定・実施・評価</h3>
+        <p>仮説に基づいて支援計画を立て、実施し、データで効果を検証します。効果がなければ仮説を見直し、計画を修正します。ABAは<strong>PDCAサイクルの繰り返し</strong>です。</p>
+        <div class="fba-method-tags">
+          <span class="method-tag">先行操作（A への介入）</span>
+          <span class="method-tag">代替行動の指導</span>
+          <span class="method-tag">後続刺激の操作</span>
+          <span class="method-tag">データによる評価</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ===================== TECHNIQUES ===================== -->
+<section class="section-full techniques-bg" id="techniques">
+  <div class="section-inner section fade-in">
+    <div class="section-label" style="color: #5eead4;">Section 07</div>
+    <h2 style="color: white;">代表的な支援技術</h2>
+    <p class="lead" style="color: #94a3b8;">
+      ABAの理論を実践に落とし込む具体的な技術群です。これらは「ABAの道具」であり、利用者の状況と機能仮説に応じて選択・組み合わせます。
+    </p>
+
+    <div class="tech-grid">
+      <div class="tech-card fade-in">
+        <div class="tech-header">
+          <div class="tech-icon-wrap">
+            <svg width="20" height="20" fill="none" stroke="#5eead4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          </div>
+          <div>
+            <div class="tech-title">タスク分析（課題分析）</div>
+            <div class="tech-subtitle">Task Analysis</div>
+          </div>
+        </div>
+        <div class="tech-desc">複雑なスキルを小さなステップに分解する技術。「報告書を書く」→「フォルダを開く→テンプレートを選ぶ→…」のように分解。</div>
+        <div class="tech-detail">就労支援での活用：新しい業務手順の教授、OJT計画の策定、プロンプト（手がかり）を段階的に外していく「プロンプトフェイディング」と組み合わせる。</div>
+      </div>
+
+      <div class="tech-card fade-in">
+        <div class="tech-header">
+          <div class="tech-icon-wrap">
+            <svg width="20" height="20" fill="none" stroke="#5eead4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+          </div>
+          <div>
+            <div class="tech-title">プロンプト・フェイディング</div>
+            <div class="tech-subtitle">Prompting & Fading</div>
+          </div>
+        </div>
+        <div class="tech-desc">正しい行動を引き出すための「手がかり（プロンプト）」を提供し、徐々に外していく技術。依存を作らずに独立したスキルへと導く。</div>
+        <div class="tech-detail">プロンプトの種類：身体的（手を添える）→ モデル（見せる）→ ジェスチャー → 言語的 → 視覚的（チェックリスト）。強いものから弱いものへと徐々に減らす。</div>
+      </div>
+
+      <div class="tech-card fade-in">
+        <div class="tech-header">
+          <div class="tech-icon-wrap">
+            <svg width="20" height="20" fill="none" stroke="#5eead4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <div class="tech-title">トークンエコノミー</div>
+            <div class="tech-subtitle">Token Economy</div>
+          </div>
+        </div>
+        <div class="tech-desc">目標行動を達成するたびにトークン（シール・スタンプ等）を付与し、一定数たまったら本人が好む強化子（活動・物品等）と交換するシステム。</div>
+        <div class="tech-detail">注意点：トークンが本来の目的（行動そのもの）を置き換えてしまうと、トークンがなくなると行動しなくなる。内発的動機とのバランスを考慮する必要がある。</div>
+      </div>
+
+      <div class="tech-card fade-in">
+        <div class="tech-header">
+          <div class="tech-icon-wrap">
+            <svg width="20" height="20" fill="none" stroke="#5eead4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <div>
+            <div class="tech-title">機能的コミュニケーション訓練</div>
+            <div class="tech-subtitle">FCT</div>
+          </div>
+        </div>
+        <div class="tech-desc">「問題行動」と同じ機能を果たす、より適切なコミュニケーション手段を教える。行動を「消そうとする」ではなく「置き換える」発想。</div>
+        <div class="tech-detail">例：「大声を出す（注目獲得機能）」→「すみません、話を聞いてください」とカードを渡すことを教える。問題行動と同じ機能を持つ代替行動が鍵。</div>
+      </div>
+
+      <div class="tech-card fade-in">
+        <div class="tech-header">
+          <div class="tech-icon-wrap">
+            <svg width="20" height="20" fill="none" stroke="#5eead4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          </div>
+          <div>
+            <div class="tech-title">消去（Extinction）</div>
+            <div class="tech-subtitle">Extinction</div>
+          </div>
+        </div>
+        <div class="tech-desc">これまで強化してきた結果を取り除くことで行動を減らす手続き。「無視する」だけではなく、機能に応じた消去手続きがある。</div>
+        <div class="tech-detail">注意：消去バースト（一時的な行動増加）が必ず起きる。事前に支援チームで共有し、一貫した対応が必要。中途半端な消去は行動を強化してしまう（部分強化効果）。</div>
+      </div>
+
+      <div class="tech-card fade-in">
+        <div class="tech-header">
+          <div class="tech-icon-wrap">
+            <svg width="20" height="20" fill="none" stroke="#5eead4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <div>
+            <div class="tech-title">般化プログラミング</div>
+            <div class="tech-subtitle">Generalization Programming</div>
+          </div>
+        </div>
+        <div class="tech-desc">習得したスキルを、訓練場面以外でも使えるようにする意図的な計画。ABAの最終目標のひとつ。</div>
+        <div class="tech-detail">方法：複数の場所・複数の人と訓練する、自然な場面に近い状況で訓練する、「訓練のための訓練」から「実際の生活場面での適用」へと移行を意識的に設計する。</div>
+      </div>
+    </div>
+
+    <!-- Reinforcement Schedules -->
+    <div style="margin-top: 60px;" class="fade-in">
+      <div class="section-label" style="color: #5eead4; margin-bottom: 16px;">補足：強化スケジュール</div>
+      <h3 style="color: #e2e8f0; font-size: 20px; font-weight: 700; margin-bottom: 8px;">「いつ強化するか」が行動の持続性を決める</h3>
+      <p style="color: #94a3b8; font-size: 14px; line-height: 1.7; margin-bottom: 24px;">強化のタイミング（スケジュール）によって、行動の「粘り強さ」が変わります。</p>
+      <div class="schedule-grid">
+        <div class="sched-card">
+          <div class="sched-abbr">CR</div>
+          <div class="sched-name">連続強化</div>
+          <div class="sched-bar-wrap"><div class="sched-bar" style="width: 100%;"></div></div>
+          <div class="sched-desc">毎回強化。新しいスキルを教えるときに最適。強化を止めると素早く消える。</div>
+        </div>
+        <div class="sched-card">
+          <div class="sched-abbr">FR</div>
+          <div class="sched-name">固定比率強化</div>
+          <div class="sched-bar-wrap"><div class="sched-bar" style="width: 75%;"></div></div>
+          <div class="sched-desc">N回目の行動ごとに強化。例：5回正解したら1回ご褒美。休憩後に反応が落ちやすい。</div>
+        </div>
+        <div class="sched-card">
+          <div class="sched-abbr">VR</div>
+          <div class="sched-name">変動比率強化</div>
+          <div class="sched-bar-wrap"><div class="sched-bar" style="width: 90%;"></div></div>
+          <div class="sched-desc">不規則な回数後に強化。スロットマシン方式。行動が最も持続しやすい。消去しにくい。</div>
+        </div>
+        <div class="sched-card">
+          <div class="sched-abbr">VI</div>
+          <div class="sched-name">変動時間間隔</div>
+          <div class="sched-bar-wrap"><div class="sched-bar" style="width: 80%;"></div></div>
+          <div class="sched-desc">不規則な時間後に強化。安定した反応率を生む。日常生活に近い自然な強化パターン。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ===================== EMPLOYMENT ===================== -->
+<section class="section" id="employment">
+  <div class="section-label">Section 08</div>
+  <h2>就労移行支援の現場でABAを活かす</h2>
+  <p class="lead">
+    就労移行支援は「就職すること」だけでなく、「職場で長続きするスキルの習得」が目標です。ABAはスキル教育・行動支援・環境調整の3つの軸でこの目標を支えます。
+  </p>
+
+  <!-- Scenario 1 -->
+  <div class="employ-scenario fade-in">
+    <h3>
+      <svg width="20" height="20" fill="none" stroke="var(--teal)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      業務スキルの習得：タスク分析を使った段階的指導
+      <span class="scenario-tag">スキル訓練</span>
+    </h3>
+    <p>
+      「電話対応」という業務を「あいさつをする→会社名・自分の名前を言う→相手の名前・要件を聞く→メモをとる→担当者に繋ぐ→確認・終話する」というステップに分解。各ステップをひとつずつ教え、習得を確認してから次へ進む。
+    </p>
+    <p>最初は強いプロンプト（スクリプトカード）を提供し、習熟とともに外していく（フェイディング）。できたステップには即時に承認の言葉をかける（強化）。</p>
+  </div>
+
+  <!-- Scenario 2 -->
+  <div class="employ-scenario fade-in">
+    <h3>
+      <svg width="20" height="20" fill="none" stroke="var(--teal)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
+      コミュニケーション困難への対応
+      <span class="scenario-tag">行動支援</span>
+    </h3>
+    <p>上司への報告を回避し続ける利用者のABC分析：</p>
+    <div class="mini-abc">
+      <div class="mini-abc-cell mac-a">
+        <div class="mac-label">A（先行）</div>
+        上司と1対1になる状況、報告しなければならない内容がある
+      </div>
+      <div class="mini-abc-cell mac-b">
+        <div class="mac-label">B（行動）</div>
+        「後でします」を繰り返し、結局報告しない
+      </div>
+      <div class="mini-abc-cell mac-c">
+        <div class="mac-label">C（結果）</div>
+        報告しなくてよくなる（逃避機能が維持）
+      </div>
+    </div>
+    <p style="margin-top: 16px;">
+      <strong>介入：</strong> ①報告の恐怖を減らす（先行操作：最初は文章での報告を可にする） ②代替行動を教える（FCT：「これでいいですか？」と確認する習慣）③できた報告を十分に認める（強化）
+    </p>
+  </div>
+
+  <!-- Task analysis visual -->
+  <div class="fade-in">
+    <h3 style="font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 12px;">タスク分析の例：「メールで連絡する」</h3>
+    <div class="task-flow">
+      <div class="task-step">
+        <div class="task-num">1</div>
+        <div class="task-text">メールアプリを開く</div>
+        <div class="task-prompt">最初はアイコンにシールを貼る</div>
+      </div>
+      <div class="task-step">
+        <div class="task-num">2</div>
+        <div class="task-text">「新規作成」ボタンを押す</div>
+        <div class="task-prompt">視覚的プロンプト</div>
+      </div>
+      <div class="task-step">
+        <div class="task-num">3</div>
+        <div class="task-text">宛先を入力する</div>
+        <div class="task-prompt">テンプレートを用意</div>
+      </div>
+      <div class="task-step">
+        <div class="task-num">4</div>
+        <div class="task-text">件名を入力する（定型文を使う）</div>
+        <div class="task-prompt">件名一覧表を提供</div>
+      </div>
+      <div class="task-step">
+        <div class="task-num">5</div>
+        <div class="task-text">本文を書く（定型文テンプレートを参照）</div>
+        <div class="task-prompt">テンプレートフォルダを作成</div>
+      </div>
+      <div class="task-step">
+        <div class="task-num">6</div>
+        <div class="task-text">送信前に宛先・件名・内容を確認する</div>
+        <div class="task-prompt">チェックリスト</div>
+      </div>
+      <div class="task-step">
+        <div class="task-num">7</div>
+        <div class="task-text">送信ボタンを押す</div>
+        <div class="task-prompt">→ 完成！即座に承認</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout fade-in" style="margin-top: 32px;">
+    <svg width="20" height="20" fill="none" stroke="#3b82f6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    <div>
+      <strong>厚生労働省の立場：</strong> 障害者の就労支援においてABAの手法は、職業リハビリテーションと並んで活用が推奨されています。特に発達特性のある方への職場定着支援において、体系的な行動支援計画（BSP）の活用が職場適応率を高めることが示されています。
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ===================== CRITIQUE ===================== -->
+<section class="section-full critique-bg" id="critique">
+  <div class="section-inner section fade-in">
+    <div class="section-label" style="color: var(--rose);">Section 09</div>
+    <h2>批判的視点：ABAの限界と倫理的課題</h2>
+    <p class="lead">
+      ABAは強力な科学的枠組みですが、批判的な視点を持つことは専門家として不可欠です。以下の課題を理解した上で使用することが、倫理的な支援につながります。
+    </p>
+
+    <div class="critique-cards">
+      <div class="crit-card crit-severe fade-in">
+        <h3>🏛 歴史的な嫌悪刺激の使用</h3>
+        <p>
+          ABAの歴史上、罰（電気ショック等の嫌悪刺激）が使われた時代がありました。現在では倫理的ガイドラインにより嫌悪刺激の使用は極めて制限されていますが、この歴史は自閉症コミュニティ等から強い不信感を生んでいます。この歴史的文脈を知ることは重要です。
+        </p>
+      </div>
+
+      <div class="crit-card crit-medium fade-in">
+        <h3>⚖ ニューロダイバーシティ運動からの批判</h3>
+        <p>
+          一部のABAプログラムは「定型発達への適応」を目標とし、自閉症者固有の行動様式（常同行動等）を「消す」ことに注力してきました。これは「マスキングの強制」であり、長期的な精神的健康を損なうという批判があります。「誰のための変化か」を常に問う必要があります。
+        </p>
+      </div>
+
+      <div class="crit-card crit-medium fade-in">
+        <h3>📊 般化の困難さ</h3>
+        <p>
+          訓練場面で習得したスキルが自然場面・異なる状況で発揮されないことが少なくありません。般化のプログラミングが不十分だと、「その場だけのスキル」に留まります。就労移行支援では特に、職場という実際の文脈での練習が不可欠です。
+        </p>
+      </div>
+
+      <div class="crit-card crit-mild fade-in">
+        <h3>🔄 外発的動機づけへの依存リスク</h3>
+        <p>
+          トークンエコノミーや外部強化子を多用すると、「強化がなければ動かない」状態が生じることがあります。内発的動機づけ（興味・達成感・自己決定）を育てる視点と組み合わせることが就労定着には不可欠です。
+        </p>
+      </div>
+
+      <div class="crit-card crit-mild fade-in">
+        <h3>🎯 個別性と文化的文脈への感受性</h3>
+        <p>
+          ABAの多くのエビデンスは欧米の研究によるものです。日本の職場文化・家族関係・コミュニティの文脈を無視した適用は、かえって本人の社会的適応を妨げる可能性があります。
+        </p>
+      </div>
+
+      <div class="crit-card crit-mild fade-in">
+        <h3>⏱ 集中的介入の現実的困難</h3>
+        <p>
+          研究上のABAは週20〜40時間の集中的介入が前提になることがありますが、就労移行支援の現場ではこれほどの資源は現実的ではありません。「標準的なABA」と「リアルワールドのABA」の差を意識する必要があります。
+        </p>
+      </div>
+    </div>
+
+    <div class="balance-box fade-in">
+      <h3>バランスある活用のために</h3>
+      <p>
+        ABAを使う際は、<strong>「何を変えるのか」「誰のために変えるのか」「本人の自己決定が尊重されているか」</strong>を常に問い続けることが必要です。ABAは「行動を変える道具」ですが、<strong>何を変えるべきかの価値判断はABAそのものからは導かれません</strong>。本人の意思・尊厳・QOL向上という倫理的軸と組み合わせてはじめて、真に人を支える支援になります。障害者権利条約（CRPD）やエンパワメントアプローチとABAは、相互補完的に活用することが今日の実践上の課題です。
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ===================== GLOSSARY ===================== -->
+<section class="section" id="glossary">
+  <div class="section-label">Section 10</div>
+  <h2>主要用語集</h2>
+  <p class="lead">重要な専門用語を平易な言葉と対比させてまとめました。</p>
+
+  <div class="glossary-grid">
+    <div class="gloss-item fade-in">
+      <div class="gloss-term">三項随伴性</div>
+      <div class="gloss-en">Three-Term Contingency (ABC)</div>
+      <div class="gloss-def">行動は「前の状況（A）→行動（B）→結果（C）」の文脈の中で起きるというABAの基本的な見方</div>
+    </div>
+    <div class="gloss-item fade-in">
+      <div class="gloss-term">強化（正・負）</div>
+      <div class="gloss-en">Reinforcement</div>
+      <div class="gloss-def">行動の後に何かが起きることで、その行動が将来増える仕組み。「ほめること」とは異なる</div>
+    </div>
+    <div class="gloss-item fade-in">
+      <div class="gloss-term">弱化（正・負）</div>
+      <div class="gloss-en">Punishment</div>
+      <div class="gloss-def">行動の後に何かが起きることで、その行動が将来減る仕組み。日本語の「罰」とは少し意味が異なる</div>
+    </div>
+    <div class="gloss-item fade-in">
+      <div class="gloss-term">機能的行動アセスメント</div>
+      <div class="gloss-en">Functional Behavior Assessment (FBA)</div>
+      <div class="gloss-def">「この行動はなぜ維持されているか」を体系的に調べるプロセス。観察・インタビュー・データ収集からなる</div>
+    </div>
+    <div class="gloss-item fade-in">
+      <div class="gloss-term">機能的コミュニケーション訓練</div>
+      <div class="gloss-en">Functional Communication Training (FCT)</div>
+      <div class="gloss-def">問題行動と同じ機能を果たす、より適切なコミュニケーション方法を教える介入</div>
+    </div>
+    <div class="gloss-item fade-in">
+      <div class="gloss-term">プロンプト</div>
+      <div class="gloss-en">Prompt</div>
+      <div class="gloss-def">正しい行動を引き出すための手がかり・補助。言語、身体的補助、視覚的情報などの種類がある</div>
+    </div>
+    <div class="gloss-item fade-in">
+      <div class="gloss-term">フェイディング</div>
+      <div class="gloss-en">Fading</div>
+      <div class="gloss-def">プロンプトを段階的に減らしていくこと。最終的に補助なしで行動できる「独立したスキル」を目指す</div>
+    </div>
+    <div class="gloss-item fade-in">
+      <div class="gloss-term">般化</div>
+      <div class="gloss-en">Generalization</div>
+      <div class="gloss-def">訓練した場面以外でもスキルが発揮されること。場所・人・状況を越えての広がりが目標</div>
+    </div>
+    <div class="gloss-item fade-in">
+      <div class="gloss-term">消去バースト</div>
+      <div class="gloss-en">Extinction Burst</div>
+      <div class="gloss-def">消去（無視等）を始めたとき、一時的に行動が強くなる現象。必ず起きるので事前に知っておく必要がある</div>
+    </div>
+    <div class="gloss-item fade-in">
+      <div class="gloss-term">強化スケジュール</div>
+      <div class="gloss-en">Schedule of Reinforcement</div>
+      <div class="gloss-def">「何回目・何分後に強化するか」のパターン。スケジュールによって行動の持続性や消えやすさが変わる</div>
+    </div>
+    <div class="gloss-item fade-in">
+      <div class="gloss-term">操作的定義</div>
+      <div class="gloss-en">Operational Definition</div>
+      <div class="gloss-def">行動を観察・測定できる形で具体的に定義すること。「やる気がない」→「着席後5分以内に課題を始めなかった」など</div>
+    </div>
+    <div class="gloss-item fade-in">
+      <div class="gloss-term">行動支援計画</div>
+      <div class="gloss-en">Behavior Support Plan (BSP)</div>
+      <div class="gloss-def">FBAの結果に基づき、先行操作・代替行動指導・後続刺激操作を組み合わせた体系的な支援計画</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"></div>
+
+<!-- ===================== SOURCES ===================== -->
+<section class="section-full sources-bg" id="sources">
+  <div class="section-inner section fade-in">
+    <div class="section-label" style="color: #5eead4;">情報源・参考文献</div>
+    <h2 style="color: white;">出典・参考資料</h2>
+    <p style="color: #94a3b8; font-size: 14px; margin-bottom: 8px; line-height: 1.7;">
+      本資料はエビデンスベースドな情報提供を目指し、以下の査読済み論文・公的資料・教科書を参照しています。
+    </p>
+
+    <div class="sources-list">
+      <div class="source-item fade-in">
+        <div class="source-num">01</div>
+        <div class="source-content">
+          <div class="source-title">Some current dimensions of applied behavior analysis</div>
+          <div class="source-meta">Baer, D. M., Wolf, M. M., & Risley, T. R. (1968). Journal of Applied Behavior Analysis, 1(1), 91–97. — ABAを科学として定義した最重要論文</div>
+          <a href="https://doi.org/10.1901/jaba.1968.1-91" target="_blank" class="source-link">doi.org/10.1901/jaba.1968.1-91 ↗</a>
+        </div>
+      </div>
+
+      <div class="source-item fade-in">
+        <div class="source-num">02</div>
+        <div class="source-content">
+          <div class="source-title">Applied Behavior Analysis (2nd ed.)</div>
+          <div class="source-meta">Cooper, J. O., Heron, T. E., & Heward, W. L. (2020). Pearson. — ABAの標準的教科書</div>
+          <a href="https://www.pearson.com/en-us/subject-catalog/p/applied-behavior-analysis/P200000003519" target="_blank" class="source-link">pearson.com ↗</a>
+        </div>
+      </div>
+
+      <div class="source-item fade-in">
+        <div class="source-num">03</div>
+        <div class="source-content">
+          <div class="source-title">Functional behavioral assessment, diagnosis, and treatment (2nd ed.)</div>
+          <div class="source-meta">Cipani, E., & Schock, K. M. (2011). Springer. — FBAと行動支援計画の実践ガイド</div>
+          <a href="https://link.springer.com/book/9780826107787" target="_blank" class="source-link">link.springer.com ↗</a>
+        </div>
+      </div>
+
+      <div class="source-item fade-in">
+        <div class="source-num">04</div>
+        <div class="source-content">
+          <div class="source-title">令和5年度　障害者雇用実態調査結果</div>
+          <div class="source-meta">厚生労働省 (2024). — 障害者の雇用実態と就労支援の現状に関する公的データ</div>
+          <a href="https://www.mhlw.go.jp/stf/newpage_35118.html" target="_blank" class="source-link">mhlw.go.jp ↗</a>
+        </div>
+      </div>
+
+      <div class="source-item fade-in">
+        <div class="source-num">05</div>
+        <div class="source-content">
+          <div class="source-title">Applied behavior analysis and autism: Building a future together</div>
+          <div class="source-meta">Keenan, M., Kerr, K. P., & Dillenburger, K. (Eds.) (2000). Jessica Kingsley. — 自閉症支援とABAの統合的論考</div>
+          <a href="https://www.jkp.com" target="_blank" class="source-link">jkp.com ↗</a>
+        </div>
+      </div>
+
+      <div class="source-item fade-in">
+        <div class="source-num">06</div>
+        <div class="source-content">
+          <div class="source-title">Critiques of Applied Behavior Analysis and Responses (Neurodiversity perspectives)</div>
+          <div class="source-meta">Kupferstein, H. (2018). Advances in Autism. — ABAへの批判的視点に関する論文</div>
+          <a href="https://doi.org/10.1108/AIA-08-2017-0016" target="_blank" class="source-link">doi.org/10.1108/AIA-08-2017-0016 ↗</a>
+        </div>
+      </div>
+
+      <div class="source-item fade-in">
+        <div class="source-num">07</div>
+        <div class="source-content">
+          <div class="source-title">障害者の日常生活及び社会生活を総合的に支援するための法律（障害者総合支援法）</div>
+          <div class="source-meta">厚生労働省 — 就労移行支援の法的根拠と支援指針</div>
+          <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/shougaishahukushi/service/index.html" target="_blank" class="source-link">mhlw.go.jp ↗</a>
+        </div>
+      </div>
+
+      <div class="source-item fade-in">
+        <div class="source-num">08</div>
+        <div class="source-content">
+          <div class="source-title">国立特別支援教育総合研究所 — 行動支援に関する研究・資料</div>
+          <div class="source-meta">NISE（国立特別支援教育総合研究所） — 日本における障害支援・行動支援の研究機関</div>
+          <a href="https://www.nise.go.jp" target="_blank" class="source-link">nise.go.jp ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <p>
+    <strong>応用行動分析（ABA）スタッフ教育資料</strong><br>
+    作成：岡村雄一郎｜キズキビジネスカレッジ<br>
+    ※ 本資料は公認心理師によるスタッフ教育を目的として作成されました。<br>
+    実際の支援への適用にあたっては、個人の状況に応じた専門的判断が必要です。
+  </p>
+</footer>
+
+<script>
+  // Progress bar
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = (scrolled / total) * 100;
+    document.getElementById('progressBar').style.width = pct + '%';
+  });
+
+  // Fade in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // TOC active state
+  const sections = ['hero', 'problem', 'definition', 'abc', 'reinforcement', 'function', 'fba', 'techniques', 'employment', 'critique', 'glossary', 'sources'];
+  const dots = document.querySelectorAll('.toc-dot');
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        const idx = sections.indexOf(id);
+        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) sectionObserver.observe(el);
+  });
+
+  // Smooth scroll
+  window.scrollTo = function(targetId) {};
+  document.querySelectorAll('.toc-dot').forEach(dot => {
+    dot.addEventListener('click', () => {
+      const target = dot.getAttribute('data-target');
+      const el = document.getElementById(target);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+
+</body>
+</html>
